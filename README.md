@@ -29,7 +29,7 @@ tweets <- tweets %>%
   replace_tag(tweets, pattern = "@([A-Za-z0-9_]+)",replacement="") %>%  # remove mentions
   replace_hash(tweets, pattern = "#([A-Za-z0-9_]+)",replacement="")      # remove hashtags
 
-# print replaced text data on index [4:5]
+#print replaced text data on index [4:5]
 tweets[4:5]
 
 tweets<- gsub("RT :", "", tweets)
@@ -40,7 +40,7 @@ coba
 
 spell.lex <-read.csv(file.choose(), header=TRUE)
 a=tweets[1:10]
-# replace internet slang
+#replace internet slang
 tweets <- replace_internet_slang(a, slang = paste0("\\b",
                                                    spell.lex$slang, "\\b"),
                                  replacement = spell.lex$formal, ignore.case = TRUE)
